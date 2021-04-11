@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GithubUserApp2</string>
+    <string name="username">Username</string>
+    <string name="type_user">Tipe user</string>
+    <string name="insert_username">Masukkan username</string>
+    <string name="search">cari</string>
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="repository">Repositori</string>
+    <string name="tab_text_1">Pengikut</string>
+    <string name="tab_text_2">Mengikuti</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="content_tab_home">Welcome Home</string>
+    <string name="content_tab_profile">Change your Profile here</string>
+    <string name="content_tab_text">This is Tab %1$d</string>
+
+    <string name="change_language_settings">Ganti Pengaturan Bahasa</string>
+    <string name="not_found">Tidak Ditemukan</string>
+
+    <string name="title_action_bar_detail">Detail User</string>
+    <string name="title_action_bar_main">Pengguna Github</string>
+    <string name="followers_not_found">tidak ada pengikut</string>
+    <string name="following_not_found">belum mengikuti</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+</resources>

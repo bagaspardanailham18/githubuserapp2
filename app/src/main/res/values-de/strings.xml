@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GithubUserApp2</string>
+    <string name="username">Nutzername</string>
+    <string name="type_user">Benutzertyp</string>
+    <string name="insert_username">Geben Sie den Benutzernamen ein</string>
+    <string name="search">Suche</string>
+    <string name="followers">Anhänger</string>
+    <string name="following">folgenden</string>
+    <string name="repository">Repository</string>
+    <string name="tab_text_1">Anhänger</string>
+    <string name="tab_text_2">folgenden</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="content_tab_home">Welcome Home</string>
+    <string name="content_tab_profile">Change your Profile here</string>
+    <string name="content_tab_text">This is Tab %1$d</string>
+
+    <string name="change_language_settings">Spracheinstellungen ändern</string>
+    <string name="not_found">Nicht gefunden</string>
+
+    <string name="title_action_bar_detail">Benutzerdetails</string>
+    <string name="title_action_bar_main">Github-Benutzer</string>
+    <string name="followers_not_found">keine Anhänger</string>
+    <string name="following_not_found">ist nicht gefolgt</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+</resources>
