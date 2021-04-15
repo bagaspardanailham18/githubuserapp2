@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bagas.androidfundamental.githubuserapp2.R
+import com.bagas.androidfundamental.githubuserapp2.entity.FavUser
 import com.bagas.androidfundamental.githubuserapp2.model.UsersItem
 import com.bagas.androidfundamental.githubuserapp2.viewModel.FollowerViewModel
 import com.bagas.androidfundamental.githubuserapp2.viewModel.ListFollowerAdapter
@@ -25,6 +26,8 @@ class FollowerFragment : Fragment() {
 
     private var users = arrayListOf<UsersItem>()
 
+    private var favorite: FavUser? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,23 +39,44 @@ class FollowerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val intent = activity?.intent?.getParcelableExtra<UsersItem>(UserDetailActivity.EXTRA_DETAIL)!!
-        val getUsername = intent.username
+        favorite = activity?.intent?.getParcelableExtra(UserDetailActivity.EXTRA_FAVORITE) as FavUser?
+        if (favorite != null) {
+            setFollowerFavorite()
+        } else {
+            setFollower()
+        }
+
+        configRecyclerView()
+        onClicked()
+    }
+
+    private fun setFollowerFavorite() {
+        val intent = activity?.intent?.getParcelableExtra(UserDetailActivity.EXTRA_FAVORITE) as FavUser?
+        val getUsername = intent?.username
 
         followerViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
-            FollowerViewModel::class.java)
+                FollowerViewModel::class.java)
+
+        setUserData(getUsername)
+        getUserData()
+    }
+
+    private fun setFollower() {
+        val intent = activity?.intent?.getParcelableExtra(UserDetailActivity.EXTRA_DETAIL) as UsersItem?
+        val getUsername = intent?.username
+
+        followerViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
+                FollowerViewModel::class.java)
 
 
         setUserData(getUsername)
         getUserData()
-
-        configRecyclerView()
-        onClicked()
-
     }
 
     private fun setUserData(username: String?) {
-        followerViewModel.setFollowers(username!!, activity!!)
+        if (username != null) {
+            followerViewModel.setFollowers(username, requireActivity())
+        }
         showLoading(true)
     }
 

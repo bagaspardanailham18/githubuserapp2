@@ -1,190 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.UserDetailActivity">
 
-    <LinearLayout
-        android:id="@+id/profile_layout"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/coolBlack1"
-        android:padding="10dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/tv_avatar"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"/>
-
-        <TextView
-            style="@style/TextContent.NameHeader"
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            tools:text="Name"
-            android:fontFamily="@font/segoe_ui_bold"
-            android:layout_marginBottom="5dp"/>
-
-        <TextView
-            style="@style/TextContent.NameHeader"
-            android:id="@+id/tv_username"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Username"
-            android:fontFamily="@font/roboto_thin"/>
+            android:background="@color/coolBlack1"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/tv_avatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                tools:src="@android:color/darker_gray"/>
+
+            <TextView
+                style="@style/TextContent.NameHeader"
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                tools:text="Name"
+                android:fontFamily="@font/segoe_ui_bold"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                style="@style/TextContent.NameHeader"
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Username"
+                android:fontFamily="@font/roboto_thin"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_followers"
+                        style="@style/ffr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Jumlah"/>
+
+                    <TextView
+                        style="@style/ffr.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="@string/followers"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="25dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_following"
+                        style="@style/ffr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Jumlah"/>
+
+                    <TextView
+                        style="@style/ffr.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="@string/following"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_repo"
+                        style="@style/ffr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Jumlah"/>
+
+                    <TextView
+                        style="@style/ffr.title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="@string/repository"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </RelativeLayout>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:src="@drawable/ic_location"
+                        android:layout_marginEnd="22dp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/tv_location"
+                        tools:text="Location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="#C9D1D9"
+                        android:textSize="14sp"
+                        android:layout_weight="1"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:src="@drawable/ic_company"
+                        android:layout_marginEnd="22dp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/tv_company"
+                        tools:text="Company"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="#C9D1D9"
+                        android:textSize="14sp"
+                        android:layout_weight="1"/>
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="20dp">
+            android:orientation="vertical"
+            android:layout_below="@+id/profile_layout">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:layout_marginBottom="8dp"
+                android:background="#212429"
+                app:tabIndicatorColor="#A6A2FF"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="#A6A5A5A5" />
 
-                <TextView
-                    android:id="@+id/tv_followers"
-                    style="@style/ffr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Jumlah"/>
-
-                <TextView
-                    style="@style/ffr.title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:text="@string/followers"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="25dp"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/tv_following"
-                    style="@style/ffr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Jumlah"/>
-
-                <TextView
-                    style="@style/ffr.title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:text="@string/following"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/tv_repo"
-                    style="@style/ffr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Jumlah"/>
-
-                <TextView
-                    style="@style/ffr.title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:text="@string/repository"/>
-
-            </LinearLayout>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp">
+    </RelativeLayout>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
-
-                <ImageView
-                    android:src="@drawable/ic_location"
-                    android:layout_marginEnd="22dp"
-                    android:layout_gravity="center_vertical"/>
-
-                <TextView
-                    android:id="@+id/tv_location"
-                    tools:text="Location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:fontFamily="@font/roboto_medium"
-                    android:textColor="#C9D1D9"
-                    android:textSize="14sp"
-                    android:layout_weight="1"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
-
-                <ImageView
-                    android:src="@drawable/ic_company"
-                    android:layout_marginEnd="22dp"
-                    android:layout_gravity="center_vertical"/>
-
-                <TextView
-                    android:id="@+id/tv_company"
-                    tools:text="Company"
-                    android:layout_gravity="center_vertical"
-                    android:fontFamily="@font/roboto_medium"
-                    android:textColor="#C9D1D9"
-                    android:textSize="14sp"
-                    android:layout_weight="1"/>
-            </TableRow>
-
-        </TableLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/profile_layout">
+        android:layout_margin="16dp"
+        app:layout_anchor="@id/view_pager"
+        app:layout_anchorGravity="bottom|end">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#70B8B8B8"
-            app:tabTextColor="@android:color/black"
-            android:layout_marginBottom="8dp"/>
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/background_toggle" />
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    </FrameLayout>
 
-    </LinearLayout>
+    <ToggleButton
+        android:id="@+id/btn_toggle_fav"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/toggle_favorite"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:textOff=""
+        android:textOn=""
+        app:layout_anchor="@+id/frameLayout"
+        app:layout_anchorGravity="center" />
 
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

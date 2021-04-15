@@ -25,4 +25,18 @@
     <string name="followers_not_found">tidak ada pengikut</string>
     <string name="following_not_found">belum mengikuti</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="user_favorite_menu">User Favorit</string>
+    <string name="title_activity_favuser">User Favorit</string>
+
+    <string name="favorite_delete">Favorit dihapus</string>
+    <string name="favorite_add">Favorit ditambahkan</string>
+
+    <string name="notification_settings">Pengaturan Notifikasi</string>
+
+    <string name="is_reminder">Pengingat Harian</string>
+    <string name="key_reminder">reminder</string>
+
+    <string name="daily_notif">Temukan favorite user baru di Github sekarang!</string>
+    <string name="splashscreen_title">Mobile</string>
+    <string name="copyright_splashscreen">By Bagas P.I</string>
 </resources>

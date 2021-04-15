@@ -25,4 +25,18 @@
     <string name="followers_not_found">keine Anhänger</string>
     <string name="following_not_found">ist nicht gefolgt</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="user_favorite_menu">Lieblingsbenutzer</string>
+    <string name="title_activity_favuser">Lieblingsbenutzer</string>
+
+    <string name="favorite_delete">Vom Favoriten gelöscht</string>
+    <string name="favorite_add">Zum Favoriten hinzugefügt</string>
+
+    <string name="notification_settings">Benachrichtigungseinstellungen</string>
+
+    <string name="is_reminder">Tägliche Erinnerung</string>
+    <string name="key_reminder">reminder</string>
+
+    <string name="daily_notif">Finde jetzt einen neuen Lieblingsbenutzer in Github!</string>
+    <string name="splashscreen_title">Mobile</string>
+    <string name="copyright_splashscreen">By Bagas P.I</string>
 </resources>

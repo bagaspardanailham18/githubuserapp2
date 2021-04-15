@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bagas.androidfundamental.githubuserapp2.R
+import com.bagas.androidfundamental.githubuserapp2.entity.FavUser
 import com.bagas.androidfundamental.githubuserapp2.model.UsersItem
 import com.bagas.androidfundamental.githubuserapp2.viewModel.FollowingViewModel
 import com.bagas.androidfundamental.githubuserapp2.viewModel.ListFollowingAdapter
@@ -21,6 +22,8 @@ class FollowingFragment : Fragment() {
 
     private var users = arrayListOf<UsersItem>()
 
+    private var favorite: FavUser? = null
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -31,23 +34,43 @@ class FollowingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val intent = activity?.intent?.getParcelableExtra<UsersItem>(UserDetailActivity.EXTRA_DETAIL)!!
-        val getUsername = intent.username
+        favorite = activity?.intent?.getParcelableExtra(UserDetailActivity.EXTRA_FAVORITE) as FavUser?
+        if (favorite != null) {
+            setFavoriteFollowing()
+        } else {
+            setFollowing()
+        }
+
+        configRecyclerView()
+        onClicked()
+    }
+
+    private fun setFavoriteFollowing() {
+        val intent = activity?.intent?.getParcelableExtra(UserDetailActivity.EXTRA_FAVORITE) as FavUser?
+        val getUsername = intent?.username
 
         followingViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
                 FollowingViewModel::class.java)
 
-        configRecyclerView()
+        setUserData(getUsername)
+        getUserData()
+    }
+
+    private fun setFollowing() {
+        val intent = activity?.intent?.getParcelableExtra(UserDetailActivity.EXTRA_DETAIL) as UsersItem?
+        val getUsername = intent?.username
+
+        followingViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
+                FollowingViewModel::class.java)
 
         setUserData(getUsername)
-
         getUserData()
-
-        onClicked()
     }
 
     private fun setUserData(username: String?) {
-        followingViewModel.setFollowing(username!!, activity!!)
+        if (username != null) {
+            followingViewModel.setFollowing(username, requireActivity())
+        }
         showLoading(true)
     }
 

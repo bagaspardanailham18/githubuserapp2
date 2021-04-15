@@ -4,6 +4,13 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <permission
+        android:name="com.bagas.androidfundamental.githubuserapp2.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.bagas.androidfundamental.githubuserapp2.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,11 +19,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubUserApp2"
         android:usesCleartextTraffic="true">
+        <receiver
+            android:name=".view.settings.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity android:name=".view.settings.NotificationSettingsActivity" />
+
+        <provider
+            android:name=".provider.FavoriteUserProvider"
+            android:authorities="com.bagas.androidfundamental.gihubuserapp2"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.FavUserActivity"
+            android:parentActivityName=".view.MainActivity" />
         <activity android:name=".view.MainActivity" />
         <activity
             android:name=".view.UserDetailActivity"
             android:parentActivityName=".view.MainActivity" />
-        <activity android:name=".view.SplashScreenActivity"
+        <activity
+            android:name=".view.SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

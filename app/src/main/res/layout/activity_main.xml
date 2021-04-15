@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#46F3F3F3"
     tools:context=".view.MainActivity">
 
     <FrameLayout
@@ -20,12 +21,17 @@
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:boxCornerRadiusTopStart="40dp"
+            app:boxCornerRadiusTopEnd="40dp"
+            app:boxCornerRadiusBottomStart="40dp"
+            app:boxCornerRadiusBottomEnd="40dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_query"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingStart="40dp"
                 android:hint="@string/search"
                 android:inputType="text"
                 android:maxLines="1" />

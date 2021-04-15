@@ -1,5 +1,6 @@
 package com.bagas.androidfundamental.githubuserapp2.view
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bagas.androidfundamental.githubuserapp2.R
 import com.bagas.androidfundamental.githubuserapp2.databinding.ActivityMainBinding
 import com.bagas.androidfundamental.githubuserapp2.model.UsersItem
+import com.bagas.androidfundamental.githubuserapp2.view.settings.NotificationSettingsActivity
 import com.bagas.androidfundamental.githubuserapp2.viewModel.ListUserAdapter
 import com.bagas.androidfundamental.githubuserapp2.viewModel.MainViewModel
 import kotlinx.coroutines.Dispatchers
@@ -120,7 +122,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this@MainActivity, UserDetailActivity::class.java).apply {
             putExtra(UserDetailActivity.EXTRA_DETAIL, data)
         }
-        startActivity(intent)
+        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -132,6 +134,16 @@ class MainActivity : AppCompatActivity() {
         if (item.itemId == R.id.action_change_settings) {
             val mintent = Intent(Settings.ACTION_LOCALE_SETTINGS)
             startActivity(mintent)
+        }
+
+        if (item.itemId == R.id.fav_menu) {
+            val favIntent = Intent(this, FavUserActivity::class.java)
+            startActivity(favIntent)
+        }
+
+        if (item.itemId == R.id.notif_setting_menu) {
+            val nsIntent = Intent(this, NotificationSettingsActivity::class.java)
+            startActivity(nsIntent)
         }
         return super.onOptionsItemSelected(item)
     }
